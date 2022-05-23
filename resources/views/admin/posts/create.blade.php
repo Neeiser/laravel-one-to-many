@@ -12,7 +12,7 @@
             <input type="text" id="title" name="title">
         </div>
 
-        {{-- @error('thumb')
+        {{-- @error('title')
             <div class="alert-error">{{ $message }}</div>
         @enderror --}}
 

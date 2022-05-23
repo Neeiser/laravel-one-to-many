@@ -23,21 +23,22 @@
           <th scope="row">{{ $post->id }}</th>
           <td class="col-1">{{ $post->creator_name }}</td>
           <td>{{ $post->title }}</td>
-          <td>{{ $post->slug }}</td>
+          <td>WIP</td>
           <td>
-            <form action="{{ route('admin.posts.show', $post->id)}}">
+            <form id="show-form" action="{{ route('admin.posts.show', $post->id)}}">
               <button class="btn btn-primary">VIEW</button>
             </form>
           </td>
           <td>
-            <form action="{{ route('admin.posts.destroy', $post->id)}}" method="POST">
+            <button id="delete-btn" class="btn btn-danger">DELETE</button>
+            <form id="delete-form" class="d-none" action="{{ route('admin.posts.destroy', $post->id)}}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger">DELETE</button>
+              <button class="btn btn-danger">Clicca per confermare</button>
             </form>
           </td>
           <td>
-            <form action="{{ route('admin.posts.edit', $post->id)}}">
+            <form id="edit-form" action="{{ route('admin.posts.edit', $post->id)}}">
               <button class="btn btn-warning">EDIT</button>
             </form>
           </td>

@@ -20,7 +20,6 @@ class PostSeeder extends Seeder
                 'title'         =>  $title,
                 'creator_name'  =>  $creator_name,
                 'description'   =>  $description,
-                'slug'          =>  Post::generateSlug($title),
             ]);
         }
     }
