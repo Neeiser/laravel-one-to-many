@@ -17,6 +17,11 @@
                     {{ __('You are logged in!') }}
 
                 </div>
+
+                <li class="list-group-item list-group-item-action">
+                    GO TO: <a href="{{ url('/') }}">HOMPAGE</a>
+                    or just press the TOP-LEFT Site name.
+                </li>
                 <li class="list-group-item list-group-item-action">
                     GO TO: <a href="{{ route('admin.posts.index') }}">INDEX</a>
                 </li>
