@@ -3,14 +3,17 @@
 @section('pagetitle', 'Index')
 
 @section('pageContent')
+
 <h1>
   <a class="title navbar-brand" href="{{ url('/') }}">
     {{ config('app.name', 'Laravel') }}
   </a>
 </h1>
+
 <form action="{{ route('admin.posts.create')}}">
   <button class="btn btn-outline-dark">CREATE A NEW DATA</button>
 </form>
+
 <table class="table">
     <thead>
       <tr>
