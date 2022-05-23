@@ -30,14 +30,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto d-flex">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -61,7 +57,7 @@
                                     </form>
                                 </div>
                             </li>
-                            <a href="{{ route('logout') }}"
+                            <a class="ml-auto p-2" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

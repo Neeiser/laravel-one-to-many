@@ -15,7 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
                 </div>
+                <li class="list-group-item list-group-item-action">
+                    GO TO: <a href="{{ route('admin.posts.index') }}">INDEX</a>
+                </li>
             </div>
         </div>
     </div>

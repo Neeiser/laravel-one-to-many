@@ -71,6 +71,14 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ route('admin.home') }}">Dashboard</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        <a class="ml-auto p-2" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                        </a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -85,12 +93,18 @@
                 <div class="title m-b-md">
                     HOMEPAGE
                 </div>
-                <div>
-                    Press <strong>Login</strong> or <strong>Register</strong> to use this site.
-                </div>
-                <div class="m-b-md">
-                    If you are already Logged-in press <strong>HOME</strong>.
-                </div>
+                @guest
+                    <div>
+                        Press <strong>Login</strong> or <strong>Register</strong> to use this site.
+                    </div>
+                    <div class="m-b-md">
+                        If you are already Logged-in press <strong>HOME</strong>.
+                    </div>
+                @else
+                    <div class="m-b-md">
+                        You are Logged-in.
+                    </div>
+                @endguest
                 <h3>
                     Go to:
                     <ul class="list-group">
