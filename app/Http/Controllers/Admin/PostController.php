@@ -11,7 +11,12 @@ use Illuminate\Routing\Route;
 
 class PostController extends Controller
 {
-    
+    protected $validation = [
+        'title'             =>  'required|min:10|max:255',
+        'creator_name'      =>  'nullable|max:100',
+        'description'       =>  'nullable|min:25|max:255',
+    ];
+
     public function index()
     {
         $postsData = Post::all();
@@ -28,6 +33,9 @@ class PostController extends Controller
     
     public function store(Request $request)
     {
+
+        $request->validate($this->validation);
+
         $postForm = $request->all();
 
         $post = new Post();
@@ -52,6 +60,9 @@ class PostController extends Controller
     
     public function update(Request $request, Post $post)
     {
+
+        $request->validate($this->validation);
+
         $postForm = $request->all();
 
         $post->update($postForm);

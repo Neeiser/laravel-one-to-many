@@ -40107,21 +40107,6 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-var showForm = document.getElementById('show-form');
-var deleteBtn = document.getElementById('delete-btn');
-var deleteForm = document.getElementById('delete-form');
-var editForm = document.getElementById('edit-form');
-
-if (deleteBtn) {
-  document.querySelectorAll('#delete-btn').forEach(function (button) {
-    button.addEventListener('click', function () {
-      this.showForm.classList.add('d-none');
-      deleteBtn.classList.add('d-none');
-      deleteForm.classList.remove('d-none');
-      editForm.classList.add('d-none');
-    });
-  });
-}
 
 /***/ }),
 

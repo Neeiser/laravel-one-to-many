@@ -25,22 +25,17 @@
           <td>{{ $post->title }}</td>
           <td>WIP</td>
           <td>
-            <form id="show-form" action="{{ route('admin.posts.show', $post->id)}}">
-              <button class="btn btn-primary">VIEW</button>
-            </form>
+            <a class="btn btn-info" id="show-a" href="{{ route('admin.posts.show', $post->id)}}">VIEW</a>
           </td>
           <td>
-            <button id="delete-btn" class="btn btn-danger">DELETE</button>
-            <form id="delete-form" class="d-none" action="{{ route('admin.posts.destroy', $post->id)}}" method="POST">
+            <form id="delete-form" action="{{ route('admin.posts.destroy', $post->id)}}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger">Clicca per confermare</button>
+              <button class="btn btn-danger">DELETE</button>
             </form>
           </td>
           <td>
-            <form id="edit-form" action="{{ route('admin.posts.edit', $post->id)}}">
-              <button class="btn btn-warning">EDIT</button>
-            </form>
+            <a class="btn btn-warning" id="edit-a" href="{{ route('admin.posts.edit', $post->id)}}">EDIT</a>
           </td>
         </tr>
       @endforeach

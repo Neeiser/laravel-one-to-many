@@ -12,27 +12,27 @@
             <input type="text" id="title" name="title">
         </div>
 
-        {{-- @error('title')
-            <div class="alert-error">{{ $message }}</div>
-        @enderror --}}
+        @error('title')
+            <div class="alert-error alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <div>
             <label for="creator_name">Nome:</label>
             <input type="text" id="creator_name" name="creator_name">
         </div>
 
-        {{-- @error('title')
-            <div class="alert-error">{{ $message }}</div>
-        @enderror --}}
+        @error('creator_name')
+            <div class="alert-error alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <div>
             <label for="description">Description:</label>
             <input type="text" id="description" name="description">
         </div>
 
-        {{-- @error('description')
-            <div class="alert-error">{{ $message }}</div>
-        @enderror --}}
+        @error('description')
+            <div class="alert-error alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <button class="btn btn-primary col-3" type="submit">INVIA DATI AL DATABASE</button>
     </form>
