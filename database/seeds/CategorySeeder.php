@@ -1,16 +1,39 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Category;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
-        //
+        $cateories = [
+            [
+                'name' => 'Gatti'
+            ],
+            [
+                'name' => 'Cani'
+            ],
+            [
+                'name' => 'Sport'
+            ],
+            [
+                'name' => 'Giochi'
+            ],
+            [
+                'name' => 'Animali'
+            ],
+            [
+                'name' => 'Pollame'
+            ],
+            [
+                'name' => 'Cibo'
+            ],
+        ];
+
+        foreach ($cateories as $category) {
+            Category::create($category);
+        }
     }
 }

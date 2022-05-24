@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Route;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -20,14 +21,21 @@ class PostController extends Controller
     public function index()
     {
         $postsData = Post::all();
+        $categoriesData = Category::all();
 
-        return view('admin.posts.index', compact('postsData'));
+        return view('admin.posts.index', [
+            'postsData'         => $postsData,
+            'categoriesData'    => $categoriesData,
+        ]);
     }
 
     
     public function create()
     {
-        return view ('admin.posts.create');
+
+        $categoriesData = Category::all();
+
+        return view ('admin.posts.create', compact('categoriesData'));
     }
 
     
@@ -54,7 +62,13 @@ class PostController extends Controller
     
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $post = new Post();
+        $categoriesData = Category::all();
+
+        return view('admin.posts.edit', [
+            'post'              => $post,
+            'categoriesData'    => $categoriesData,
+        ]);;
     }
 
     

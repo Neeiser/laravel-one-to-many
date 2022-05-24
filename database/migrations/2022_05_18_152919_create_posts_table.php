@@ -19,6 +19,11 @@ class CreatePostsTable extends Migration
             $table->string('creator_name', 50)->default('unknown');;
             $table->text('description')->nullable();
             $table->timestamps();
+
+            $table->foreign('category_id')
+                    ->reference('id')
+                    ->on('categories')
+                    ->onDelete('SET NULL');
         });
     }
 
