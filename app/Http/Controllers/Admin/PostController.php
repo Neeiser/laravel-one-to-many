@@ -23,6 +23,7 @@ class PostController extends Controller
         $postsData = Post::all();
         $categoriesData = Category::all();
 
+
         return view('admin.posts.index', [
             'postsData'         => $postsData,
             'categoriesData'    => $categoriesData,
@@ -62,13 +63,12 @@ class PostController extends Controller
     
     public function edit(Post $post)
     {
-        $post = new Post();
         $categoriesData = Category::all();
 
         return view('admin.posts.edit', [
             'post'              => $post,
             'categoriesData'    => $categoriesData,
-        ]);;
+        ]);
     }
 
     

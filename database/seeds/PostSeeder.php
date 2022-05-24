@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Post;
 use Faker\Generator as Faker;
+use App\Category;
 
 
 class PostSeeder extends Seeder
@@ -18,6 +19,7 @@ class PostSeeder extends Seeder
 
             Post::create([
                 'title'         =>  $title,
+                'categories_id' =>  Category::inRandomOrder()->first()->id,
                 'creator_name'  =>  $creator_name,
                 'description'   =>  $description,
             ]);

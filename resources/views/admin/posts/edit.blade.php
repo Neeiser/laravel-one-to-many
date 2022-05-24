@@ -10,7 +10,7 @@
         @method('PUT')
         <div>
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" value="{{ $post->title}}">
+            <input type="text" id="title" name="title" value="{{ $post->title }}">
         </div>
 
         @error('title')

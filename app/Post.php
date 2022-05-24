@@ -8,14 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
 
+    public $timestamps = false;
     protected $fillable = [
+        'categories_id',
         'title',
         'creator_name',
         'description',
         'slug',
     ];
 
-    static public function generateSlug($str){
+    /* static public function generateSlug($str){
         $slug = Str::of($str)->slug('-');
         $newSlug = $slug;
         $counter = 1;
@@ -25,5 +27,9 @@ class Post extends Model
             $counter++;
         }
         return $slug;
+    } */
+
+    public function category() {
+        return $this->belongsTo('App\Category', 'categories_id');
     }
 }
